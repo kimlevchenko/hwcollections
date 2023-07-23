@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Employee {
 
-    private String fistName;
-    private String lastName;
+    private final String fistName;
+    private final String lastName;
 
     public Employee(String fistName, String lastName) {
         this.fistName = fistName;
@@ -16,16 +16,8 @@ public class Employee {
         return fistName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     @Override

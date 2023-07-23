@@ -10,4 +10,4 @@ GET http://localhost:8080/employee/remove?firstName=Ivan&lastName=Ivanov
 
 ###
 
-GET http://localhost:8080/employee/all
+GET http://localhost:8080/employee/

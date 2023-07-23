@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.java.group.hwcollections.model.Employee;
 import pro.sky.java.group.hwcollections.service.EmployeeService;
+import pro.sky.java.group.hwcollections.service.EmployeeServiceImpl;
 
 import java.util.Collection;
 
@@ -21,24 +22,23 @@ public class EmployeeController {
 
     @GetMapping("/add")
 
-    public void add(@RequestParam String firstName, @RequestParam String lastName) {
-        service.addEmployee(firstName, lastName);
+    public Employee add(@RequestParam String firstName, @RequestParam String lastName) {
+        return service.add(firstName, lastName);
     }
 
     @GetMapping("/find")
 
     public Employee get(@RequestParam String firstName, @RequestParam String lastName) {
-        return service.findEmployee(firstName, lastName);
+        return service.find(firstName, lastName);
     }
 
     @GetMapping("/remove")
 
-    public boolean remove(@RequestParam String firstName, @RequestParam String lastName) {
-        return service.removeEmployee(firstName, lastName);
+    public Employee remove(@RequestParam String firstName, @RequestParam String lastName) {
+        return service.remove(firstName, lastName);
     }
 
-    @GetMapping("/all")
-
+    @GetMapping
     public Collection<Employee> getAll() {
         return service.getAll();
     }
